@@ -1,0 +1,32 @@
+name: flutter_voice_recg_app
+description: "Cross-platform Flutter app that listens for 6 seconds and transcribes English speech using each platform's on-device STT engine (Android SpeechRecognizer.createOnDeviceSpeechRecognizer + iOS SFSpeechRecognizer)."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.11.5
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+
+  # Wraps Android's SpeechRecognizer (createOnDeviceSpeechRecognizer on
+  # API 31+) and iOS's SFSpeechRecognizer behind a single Flutter API,
+  # with `onDevice: true` to force on-device recognition where available.
+  speech_to_text: ^7.3.0
+
+  # Runtime mic permission for Android, plus iOS speech recognition
+  # permission helpers.
+  permission_handler: ^12.0.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
